@@ -10,9 +10,36 @@
 
 4. 建立一個好習慣，要先開一個新的 branch 
 
-5. 在新的branch中，進行檔案的修改，改好後 merge 回去原本的master
+5. 在新的branch中，進行檔案的修改，如果程式碼確定無誤，就commit - am" "  然後 cimmit push origin 
 
-6. 
+6. 開 gitHub 會出現一個your recently push branch 按下compare & pull request 
+
+7. base master> compare week1  
+
+8. 按下create pull request 
+
+9. 完成後複製網址，然後開啟 https://github.com/Lidemy/homeworks-3rd 第三期交作業的地方 
+
+10. 開啟一個 issue 注意格式 [Week1] 完成後 在看老師有沒有什麼要修改的
+
+11. 如果沒有就會把 issue 關掉  
+
+12. git checkout master >git pull master 
+
+13. 然後再把 branch 刪掉，git branch -d week1 > git branch -v
+
+14. 打完收工
+
+
+
+
+
+
+
+
+
+
+
 
 
 
