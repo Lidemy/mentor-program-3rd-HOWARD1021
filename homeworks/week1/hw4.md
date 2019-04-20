@@ -36,6 +36,6 @@ git push -u origin master
 3. 然後 git push origin  將 檔案傳上去
 ## 如果是要下載複製
 1. 一樣在 github 上有個 clone or download
-2. git clone 複製的網址
+2. git clone 貼上(複製的網址) enter
 3. 然後 ls 新的檔案
 4. cd 到新的檔案 就可以了
