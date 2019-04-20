@@ -10,7 +10,7 @@
 
 4. 建立一個好習慣，要先開一個新的 branch 
 
-5. 在新的branch中，進行檔案的修改，如果程式碼確定無誤，就commit - am" "  然後 cimmit push origin 
+5. 在新的branch中，進行檔案的修改，如果程式碼確定無誤，就commit - am" "  然後 cmmit push origin 
 
 6. 開 gitHub 會出現一個your recently push branch 按下compare & pull request 
 
