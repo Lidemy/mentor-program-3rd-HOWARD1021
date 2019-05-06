@@ -7,4 +7,6 @@ function stars(n) {
   }
   return ans;
 }
-console.log(stars(5));
+console.log(stars(1));
+
+module.exports = stars;
