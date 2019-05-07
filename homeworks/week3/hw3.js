@@ -1,5 +1,6 @@
-function isprime(n) {
+function isPrime(n) {
   if (n === 1) return false;
+  if (n === 2) return true;
   for (let i = 2; i <= Math.sqrt(n); i += 1) {
     if (n % i === 0) {
       return false;
@@ -8,6 +9,6 @@ function isprime(n) {
   return true;
 }
 
-console.log(isprime(7));
+console.log(isPrime(2));
 
-module.exports = isprime;
+module.exports = isPrime;
