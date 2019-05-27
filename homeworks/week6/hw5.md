@@ -27,7 +27,7 @@
 程式的預設值為 block，特性是會佔滿整行，儘管還沒填滿，也會直接挑到下一行
 * display:inline 可使用元素有< span, a>
   1. 特性是 調整寬高 以及上下邊距沒有用，只會看內容 調整 width height 是不會改變的
-margin 左右會改變上下編劇不變(可以用比較直接的想法去記住，通常使用　inline 是為了要改變文章中的其中某些字母 , 因此改變上下會很奇怪)
+，margin 左右會改變上下邊距不變(可以用比較直接的想法去記住，通常使用　inline 是為了要改變文章中的其中某些字母 , 因此改變上下會很奇怪)
 	2. padding 左右會改變，改變 padding　上下會發現 元素沒有動 但是背景有影響，內容不會改變
 * display:Inline-block 可使用元素有 < button, input, select>
 綜合 block, inline 兩種特性
@@ -43,9 +43,8 @@ margin 左右會改變上下編劇不變(可以用比較直接的想法去記住
     通常使用 relative 都是為了讓下面的元素可以使用 absolute 絕對定位
 3. position:fixed  固定定位
 在 viewport 做定位
-4. 
-* position:absolute; 絕對定位
-往上找到非 static 的元素，如果是相對定位　relative　就針對他來做定位
+4. position:absolute; 絕對定位 
+*  絕對定位需要往上找到非 static 的元素，如果是相對定位　relative　就針對他來做定位
 如果都找不到 非 static 的元素 則定位在 body
 * 也就是說往上的元素裡面要有 設定 relative
 * 有趣的點是 使用了 絕對定位後，會直接抽出正常的排版程序，下一個元素會遞補上來，會假裝這 absolute 這個元素不存在,繼續做排版流程
