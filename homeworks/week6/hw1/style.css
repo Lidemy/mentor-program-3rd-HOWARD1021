@@ -90,3 +90,15 @@ background:#104b94;
 .footer{
 	border-top: 1px solid black;
 	margin-top:10px;}
+
+@media screen and (max-width: 768px){
+	.row {
+		flex-wrap:wrap ;
+	}
+
+
+    .col{
+	margin-left:0px;
+	margin-top:20px;
+ }
+}
