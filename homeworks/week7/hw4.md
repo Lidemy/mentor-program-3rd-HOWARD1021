@@ -1,4 +1,5 @@
 ## 什麼是 DOM？
+![avatar](https://d1dwq032kyr03c.cloudfront.net/upload/images/20171214/20065504EIG4UYcuGE.png)
 
 
 ## 事件傳遞機制的順序是什麼；什麼是冒泡，什麼又是捕獲？
