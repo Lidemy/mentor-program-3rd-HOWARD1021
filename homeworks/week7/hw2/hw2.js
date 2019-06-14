@@ -24,7 +24,7 @@ function removeReminder(node) {
 }
 
 for (let i = 0; i < inputRequired.length; i += 1) {
-  inputRequired[i].addEventListener('blur', (e) => {
+  inputRequired[i].addEventListener('blur', function add(e) {
     const { backgroundColor } = this.closest('.container__required').style;
     if (e.target.value === '' && backgroundColor === '') {
       addReminder(this);
@@ -38,7 +38,7 @@ submitForm.addEventListener('submit', (e) => {
   let finalCheck = true;
   for (let i = 0; i < inputRequired.length; i += 1) {
     if (!inputRequired[i].value) {
-      if (inputRequired[i].style.borderBottom !== 'rgb(234, 53, 53)') {
+      if (inputRequired[i].style.borderBottomColor !== 'rgb(234, 53, 53)') {
         addReminder(inputRequired[i]);
       }
       finalCheck = false;
