@@ -1,0 +1,45 @@
+body{
+	background-color:#e67e22;
+}
+.board {
+  margin: auto  500px;
+  text-align:left;
+  background-color:#ecf0f1;
+
+ 
+}
+.table{   
+	margin:100px auto;
+    display: flex;
+    flex-direction: column;
+    align-items:left;
+    max-width:400px;
+    border:solid 20px  #efefef;
+    justify-content: center;
+    font-family:"Microsoft JhengHei";
+}  
+.form__textarea {
+	
+    width: 80%;
+    height: 100px;
+    display: flex;
+    margin: 50px 5%;
+    justify-content: start;
+    font-size: 20px;
+}
+.form {
+      margin-top: 20px;
+    }
+
+.message-itmes{
+  border: 1px solid grey;
+  margin: 20px 20px;
+  padding: 5px;
+  background:#bdc3c7; 
+}
+
+p {
+  font-size: 15px;
+}
+
+
