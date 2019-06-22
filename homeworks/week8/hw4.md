@@ -3,12 +3,12 @@
   Asynchronous 非同步的意思: 可以使 web 在不需要從新整理的情況下，更新即時的介面及內容,讓程式可以更快速的回應使用者的操作
   可以用來獲得其他網站的資料
   先用 new XMLHttpRequest 宣告 request 
-  ``` 
+  ```js 
   const request = new XMLHttpRequest();
   ```
   
   再來 宣告當收到 response 時是要怎麼處理資料
- ```
+ ```js
  equest.onload = () => {
   if (request.status >= 200 && request.status < 400){
   //如何處理
@@ -23,7 +23,7 @@ console.log('error')
  ```
 
 接著使用 request.opne() request.send() 實際送出 request
-```
+```js
 request.opne('GET', 'url', true)
 request.send()
 ```
@@ -42,12 +42,12 @@ request.send()
   Twich 提供一個 JSONP 的版本
 ```url =https://api.twitch.tv/kraken/games/top?client_id=xxx&callback=receiveData&limit=1
 ```
-```
+```js
   receiveData({"_total":1067,"_links":{"self":"https://api.twitch.tv/kraken/games/top?limit=1","next":"https://api.twitch.tv/kraken/games/top?limit=1\u0026offset=1"},"top":[{"game":{"name":"Dota 2","popularity":63361,"_id":29595,"giantbomb_id":32887,"box":{"large":"https://static-cdn.jtvnw.net/ttv-boxart/Dota%202-272x380.jpg","medium":"https://static-cdn.jtvnw.net/ttv-boxart/Dota%202-136x190.jpg","small":"https://static-cdn.jtvnw.net/ttv-boxart/Dota%202-52x72.jpg","template":"https://static-cdn.jtvnw.net/ttv-boxart/Dota%202-{width}x{height}.jpg"},"logo":{"large":"https://static-cdn.jtvnw.net/ttv-logoart/Dota%202-240x144.jpg","medium":"https://static-cdn.jtvnw.net/ttv-logoart/Dota%202-120x72.jpg","small":"https://static-cdn.jtvnw.net/ttv-logoart/Dota%202-60x36.jpg","template":"https://static-cdn.jtvnw.net/ttv-logoart/Dota%202-{width}x{height}.jpg"},"_links":{},"localized_name":"Dota 2","locale":"zh-tw"},"viewers":65622,"channels":376}]})
 ```
 *
   透過 callback 帶過去的參數=>receiveData 當作函式名稱 把 JavaScript 內的整個物件整個傳到 function 
-```
+```js
   <script src="https://api.twitch.tv/kraken/games/top?client_id=xxx&callback=receiveData&limit=1"></script>
 <script>
   function receiveData (response) {
