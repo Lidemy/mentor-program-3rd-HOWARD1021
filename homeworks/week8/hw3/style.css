@@ -1,0 +1,33 @@
+body{
+	background-color:#ecf0f1;
+}
+
+.web{
+	text-align:center;
+	
+}
+.title{
+	margin-top:50px;
+	font-size:50px;	
+}
+
+.textelement{
+	display:inline-block;
+	border: solid 1px #2c3e50;
+	margin:15px;
+	padding:5px;
+	transition: all 0.3s;
+}
+.textelement:hover{
+	transform:scale(1.02);
+	border:1px solid #e67e22;
+}
+.streamer{
+		display:flex;
+		justify-content:flex;	
+}
+.logo{
+	width:50px;
+	height:50px;
+
+}
