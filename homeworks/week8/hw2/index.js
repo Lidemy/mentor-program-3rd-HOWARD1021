@@ -1,28 +1,49 @@
-const request = new XMLHttpRequest();
-const table = document.querySelector('.table');
-const newdata = document.querySelector('.form__textarea');
+const boardData = document.querySelector('.board__data');
+const newData = document.querySelector('.form__textarea');
 const btn = document.querySelector('.btn');
-// 先新增一個新的div 跟class 接著加入 id 與 content的值 最後append回去table//
-request.open('GET', 'https://lidemy-book-store.herokuapp.com/posts?_limit=20&_sort=id&_order=asc', true);
-request.onload = () => {
-  const json = JSON.parse(request.responseText);
-  for (let i = 0; i < json.length; i += 1) {
-    const p = document.createElement('div');
-    p.classList.add('message-itmes');
-    p.innerHTML = `${json[i].id} 樓 :${json[i].content}`;
-    table.appendChild(p);
+let result;
+
+
+function showmessage(data) {
+  boardData.innerHTML = '';
+  for (let i = 0; i < data.length; i += 1) {
+    result = document.createElement('div');
+    result.classList.add('message-itmes');
+    result.innerHTML = `${data[i].id} 樓: ${data[i].content}`;
+    boardData.appendChild(result);
   }
-};
-request.send();
-// 新增一個留言,//
-btn.onclick = () => {
-  request.open('POST', 'https://lidemy-book-store.herokuapp.com/posts', true);
-  request.setRequestHeader('Content-type', 'application/x-www-form-urlencoded');
-  request.send(`content=${newdata.value}`);
+}
+
+function loadData() {
+  const request = new XMLHttpRequest();
   request.onload = () => {
     if (request.status >= 200 && request.status < 400) {
-      const text = document.createElement('div');
-      text.innerText = `${newdata.value}`;
+      const json = JSON.parse(request.responseText);
+      showmessage(json);
+    } else {
+      console.log(request.status);
     }
   };
-};
+  request.onerror = () => {
+    console.log('error');
+  };
+  request.open('GET',
+    'https://lidemy-book-store.herokuapp.com/posts?_limit=20&_sort=id&_order=desc', true);
+  request.send();
+}
+
+
+loadData();
+
+btn.addEventListener('click', (e) => {
+  const request = new XMLHttpRequest();
+  e.preventDefault();
+  request.open('POST', 'https://lidemy-book-store.herokuapp.com/posts', true);
+  request.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
+  request.send(`content=${encodeURIComponent(newData.value)}`);
+  const newRequest = new XMLHttpRequest();
+
+  // loading
+  loadData(newRequest);
+  newData.value = '';
+});
