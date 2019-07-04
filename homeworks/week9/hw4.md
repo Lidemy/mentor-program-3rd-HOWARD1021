@@ -9,10 +9,12 @@
 * TEXT 最大限制是 16K  
 采用 utf-8 字符集,(262144-2)/3=87381 個字符。
 ### 額外占用空間開銷說明
-* 
-varchar 小於255byte 1byte overhead
+* varchar 小於255byte 1byte overhead
+
 varchar 大於255byte 2byte overhead
+
 text 0-65535 byte 2 byte overhead
+
 從處理形態上來講varchar 大於768字節後，實質上存儲和text差別不是太大了.基本認為是一樣的
 
 ### 差別 
@@ -26,7 +28,7 @@ text 0-65535 byte 2 byte overhead
 　php 使用方法
  setcookie ( " member_id "(目錄名稱) , " 001 " (cookie資料名稱), time () + 3600 * 24 (存取時間) );
 * cookie 預設在每次網站 request 時都會夾帶到 server 裡面去 而 server 回傳 response 時也會把 cookie 下載到瀏覽器上面
-所以當client 前往某一個網站,瀏覽器會檢查 它含有的 cookie 有沒有被那個網頁存取,如果有的話就會在 HTTP Request Header 上面這欄加入cookie,一同傳給伺服器 
+所以當client 要求某一個網站,瀏覽器會檢查 它含有的 cookie 有沒有被那個網頁存取,如果有的話就會在 HTTP Request Header 上面這欄加入cookie,一同傳給伺服器 
 
 
 ## 我們本週實作的會員系統，你能夠想到什麼潛在的問題嗎？
@@ -34,7 +36,7 @@ text 0-65535 byte 2 byte overhead
 * 忘記帳號密碼 沒有辦法利用信箱做重新認證的動作,
 * 在內部再新增一個新的社團認證
 * 沒有辦法刪除留言
-* 
+ 
 
 
 
