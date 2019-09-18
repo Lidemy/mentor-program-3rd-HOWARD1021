@@ -1,16 +1,15 @@
 ## 請說明 SQL Injection 的攻擊原理以及防範方法
 ### sql injection
-* 為　Sql 語法中，出現的漏洞，攻擊者可以利用此漏洞，像是特殊字元，改變語法邏輯，來執行他們想要的指令來獲取資料庫的資料，像是會員的帳號密碼，
+* 為 Sql 語法中，出現的漏洞，攻擊者可以利用此漏洞，像是特殊字元，改變語法邏輯，來執行他們想要的指令來獲取資料庫的資料，像是會員的帳號密碼，
 攻擊原理舉例但不限於:
-1. 在會員登入時網站要驗證是否，帳號密碼正確 ，要寫這樣的 sql　語法
+* 在會員登入時網站要驗證是否，帳號密碼正確 ，要寫這樣的 sql　語法
 select * from members where account='$name' and password='$password'
-這時我們給他一個帳號，　
+* 這時我們給他一個帳號，　
 ' or 1=1 --
-密碼任意值
-->
-select * from members where account='' or 1=1 --' and password=''
+* 密碼任意值
+* 執行 select * from members where account='' or 1=1 --' and password=''
 
-因為  -- 會變成註解 
+因為  -- 後會變成註解 
 前面的　1=1 又一定會程式，就會造成判斷式一定成立，駭客就能成功登入
 為了防止 sql injection 我們要做的是，
 我們要過濾字串,並檢查變數型態 [ 數字, 字串, 字元]
@@ -48,10 +47,11 @@ $result = $conn->query($sql);
 我們可以來寫一個 <script>alert 1</script>,
 來造成我們的網站變成，只會顯示1的，彈出式視窗
 處理方式 :escape 可以將輸入的資料，改為純文字
+```
 function escape($str) {
     return htmlspecialchars($str, ENT_QUOTES, 'utf-8');
 }
-
+```
 2.引導式(反射型)攻擊
 :  我們在 網址中 傳入一個 ?message 
 ="傳入成功"
@@ -69,16 +69,16 @@ function escape($str) {
 這邊有三項事情要注意
  第一 有些瀏覽器不會附帶 referer  功能 
  第二 有些使用者，會關閉，自動帶 referer  的功能
- 第三 判定是不是合法domain 必須保證沒有　ｂｕｇ 
+ 第三 判定是不是合法domain 必須保證沒有 bug
 * 加上圖形驗證碼,簡訊驗證碼等等
 來確定是否是真的本人
 * 加上　CSRF token 
 我們要確保有些資訊只有使用者才會知道
-，我們可以在 form  裡面 設定 session 資訊，按下 submit 後 server 會比對 form 中的 csrftoken 是不是 與自己 session 裡面的一樣， 而且一段時間 session　就應該要更改
+，我們可以在 form  裡面 設定 session 資訊，按下 submit 後 server 會比對 form 中的 csrftoken 是不是 與自己 session 裡面的一樣， 而且一段時間 session 就要更改
 *  Double Submit Cookie
 我們一樣讓 server  設定 一個 隨機 token 
-並且放在 form 上面 但是不用把值 寫在
-session 上 而是 在 client 上面寫一個  csrftoken的　cookie 
-質也是相同的 token ，我們在 按下 submit 時，
-我們就比對 cookie 的 csrftoken 與 form 裡面的 csrftoken 是否相同，因為同源政策，攻擊者不能夠在他的domain設定 相同的cookie
+並且放在 form 上面，但是不用把值寫在
+session 上，而是在 client 上面寫一個  csrftoken 的　cookie 
+值 ，我們在 按下 submit 時，
+server 就比對 cookie 內的 csrftoken 與 form 裡面的 csrftoken 是否相同，因為同源政策，攻擊者不能夠在他的domain設定 相同的cookie
 因此攻擊者 發出的 request　cookie　 裡面就沒有含有　csfrtoken 就會被擋住了 
