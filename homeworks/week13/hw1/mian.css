@@ -1,0 +1,15 @@
+.container{
+	margin-top: 20px;
+	max-width:960px;
+	}
+.row{
+	margin-top:20px;
+
+}
+/*> 選取接觸到的元素 ^=選取開頭是col-*/
+.row>[class^=col-]{
+  padding-top: .75rem;
+  padding-bottom: .75rem;
+  background-color: #E5EAF0;
+  border: 1px solid rgba(86,61,124,.2);
+}
