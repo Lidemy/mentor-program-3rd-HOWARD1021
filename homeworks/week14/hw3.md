@@ -31,7 +31,7 @@ $conn->query("SELECT amount FROM products for update");
 * SQL 為關聯式資料庫 要在 sql 建立資料庫 需要先建立一個Schema 及資料格式,好處是查詢資料方便,統整資料快速,但因為如果資料龐大,所需要的伺服器成本會提高,也會影響讀取速度
 ## 資料庫的 ACID 是什麼？
 * ACID
-原子性 atomicity :要全部失敗不然就要全部成功
-一致性 consistency: 維持資料的一致性(錢的總數相同)
-隔離性 isolation : 多筆資料簿會互相影響(不能同時改同一個值)
-持久性 durability: 交易完成之後,寫入的資料不會不見
+* 原子性 atomicity :要全部失敗不然就要全部成功
+* 一致性 consistency: 維持資料的一致性(錢的總數相同)
+* 隔離性 isolation : 多筆資料簿會互相影響(不能同時改同一個值)
+* 持久性 durability: 交易完成之後,寫入的資料不會不見
