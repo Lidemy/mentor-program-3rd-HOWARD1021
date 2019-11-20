@@ -12,10 +12,10 @@ function getMainPost(name, comment, id, create_at) {
     <button class='btn btn-light'><a href='./update_post.php?id=${id}'> Edit </a></button>
     </div>
     <div class='sub_comments'>   
-    <form method = 'POST' action='./handle_add.php' name="comments">
+    <form method = 'POST' action='./handle_add.php' >
     <input type='hidden' value=${id} name='parent_id'/>
      <textarea class='textarea_set' id='sub_post' name='comment' placeholder='Leave a message' style= 'width:300px;height:70px'></textarea>
-        <input type='submit' value='留言' class='btn btn-primary'>
+        <input type='submit' value='留言' class='btn btn-primary message_add''>
         </form>
     </div>
     </div>`;
@@ -59,7 +59,7 @@ $(document).ready(() => {
   });
   // 新增留言$('form[name=comments]').submit(function(e){
   // $('.main').on('click', '.btn-add', function(e)
-  $('form[name=comments]').submit((e) => {
+  $('.table').on('click', '.message_add', (e) => {
     e.preventDefault();
     const comment = $(e.target).find('textarea[name=comment]').val();
     const parent_id = $(e.target).find('input[name=parent_id]').val();
