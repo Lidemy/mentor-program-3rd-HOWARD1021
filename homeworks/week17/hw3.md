@@ -31,16 +31,31 @@ console.log(b) //100
 
 ### EC 環境
 - 6. 執行 fn2 EC
+
 ```
-fnEC2
-AO{	
-   a:20
-   fn2:func
+fn2().[[Scope]] = fnEC.VO + GlobalEC.VO
+
+fn2EC
+AO:{	
+   {arguments},
    scopechain: fn2EC.VO + fn2().[[Scope]] = 
    fnEC2.VO + fnEC.VO + GlobalEC.VO
 }
+fnAO: {
+   arguments,
+   a:5
+   fn2:func
+   scopechain:fnEC.VO + fn().[[Scope]] = fnEC.VO + GlobalEC.VO
+}
+GlobalEC 
+VO {
+	a :1	
+	fn:undefined
+	fn2:undefined
+	scopechain:GlobalEC.VO 
+}
 
-fn2().[[Scope]] = fnEC.VO + GlobalEC.VO
+
 
 ```
 - 5. 編成 fn2 EC
@@ -50,10 +65,26 @@ fn2().[[Scope]] = fnEC.VO + GlobalEC.VO
 ```a = 20
 fnEC2
 AO{	
+   arguments,
    a:20
    fn2:func
    scopechain:fn2EC.VO + fn2().[[Scope]] = fnEC2.VO + fnEC.VO + GlobalEC.VO
 }
+fnAO{
+   arguments, 
+   a:5,
+   fn:func,
+   fn2:undefined,
+   scopechain:fnEC.VO + fn().[[Scope]] = fnEC.VO + GlobalEC.VO
+}
+GlobalEC 
+VO {
+	a :1	
+	fn:undefined
+	fn2:undefined
+	scopechain:GlobalEC.VO 
+}
+
 
 
 a++ = 6
@@ -64,7 +95,20 @@ AO{
    fn2:func
    scopechain:fn2EC.VO + fn2().[[Scope]] = fnEC2.VO + fnEC.VO + GlobalEC.VO
 }
-fn2().[[Scope]] = fnEC.VO + GlobalEC.VO
+fnAO{	
+   a:5
+   fn:func
+   fn2:func
+   scopechain:fnEC.VO + fn().[[Scope]] = fnEC.VO + GlobalEC.VO
+}
+GlobalEC 
+VO {
+	a :1	
+	fn:func
+	fn2:func
+	scopechain:GlobalEC.VO 
+}
+
 ```
 
 - 4.執行 fn EC
@@ -76,14 +120,31 @@ AO{
    fn2:undefined
    scopechain:fnEC.VO + fn().[[Scope]] = fnEC.VO + GlobalEC.VO
 }
+GlobalEC 
+VO {
+	a :1	
+	fn:func
+	fn2:undefined
+	scopechain:GlobalEC.VO 
+}
+
 
 a = 5 
-AO{	
-   a:5
-   fn:func
-   fn2:undefined
+AO{
+   arguments,
+   a:5,
+   fn:func,
+   fn2:undefined,
    scopechain:fnEC.VO + fn().[[Scope]] = fnEC.VO + GlobalEC.VO
 }
+GlobalEC 
+VO {
+	a :1	
+	fn:func
+	fn2:undefined
+	scopechain:GlobalEC.VO 
+}
+
 ```
 
 - 3.編成 fn EC
@@ -91,11 +152,20 @@ AO{
 ```
 ```fnEC
 AO{	
+   arguments,
    a:undefined
-   fn:undefined
-   fn2:undefined
+   fn2:func
    scopechain:fnEC.VO + fn().[[Scope]] = fnEC.VO + GlobalEC.VO
 }
+
+GlobalEC 
+VO {
+	a :1	
+	fn:func
+	fn2:undefined
+	scopechain:GlobalEC.VO 
+}
+
 ```
 - 2.執行 Global EC
 ```
@@ -124,7 +194,7 @@ scopechain:為 GlobalEC.VO + [[scope]]
 GlobalEC 
 VO {
 	a :undefined	
-	fn:undefined
+	fn:func
 	fn2:undefined
 	scopechain:GlobalEC.VO 
 }```
