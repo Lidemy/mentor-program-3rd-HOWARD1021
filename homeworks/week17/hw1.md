@@ -9,7 +9,7 @@ setTimeout(() => {
 console.log(5)
 ```
 - 會先執行 Stack 的資料 
- 接著執行伺服器提供的 api setTimeout() ,跑完後將 檔案放入 queue 裡面 
+ 接著執行瀏覽器提供的 api setTimeout() ,跑完後將 setTimeou() 中的一個參數 放入 queue 裡面 
 - 當 call stack 跑完 1,3,5 為空的時候 Event Loop 會將 que 的值放入 call stack 裡面
 再續執行 2,4
 # call stack       
