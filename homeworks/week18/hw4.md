@@ -1,5 +1,5 @@
 ## gulp 跟 webpack 有什麼不一樣？我們可以不用它們嗎？
-### 兩者的差異性
+#### 兩者的差異性
 - gulp 走的是 流線處理路線， webpack 走的是 模組管理處理路線
  ，兩者的目的都是一樣為 前端的自動化與工程化管理
  雖然webpack 十分方便 但是本身強大同時臃腫 適用於大型 SPA
@@ -10,9 +10,9 @@
 
 ## hw3 把 todo list 這樣改寫，可能會有什麼問題？
 - 我們每次資料重新修改一次，就會整個頁面重新 render 
-- 當檔案便超大時，就會造成流量上的困擾
+- 當檔案變超大時，就會造成流量上的困擾
 
-###  CSS Sprites 與 Data URI 的優缺點是什麼？
+##  CSS Sprites 與 Data URI 的優缺點是什麼？
 #### Data URI
 - 進入網站時,瀏覽器會針對網站中每一個元素 呼叫 HTTP 請求(requst) , 最常見的就是是圖片
 - 因此我們當我們呼叫一次大量的圖片檔後,網路的載入速度就會受到影響,因此我們可以使用 Data URI 來將圖片以
@@ -33,7 +33,6 @@ Base64編碼,並內嵌入 網頁之中
 
 
 ###### 參考資料 
-[使用 DATA URI 將圖片以 Base64 編碼並內崁至網頁中，加速載入速度
+- [使用 DATA URI 將圖片以 Base64 編碼並內崁至網頁中，加速載入速度
 2013/09/12](https://blog.gtwang.org/web-development/minimizing-http-request-using-data-uri/)
-[前端構建工具之爭——Webpack vs Gulp 誰會被拍死在沙灘上](https://www.cnblogs.com/iovec/p/7921177.html)
-###### tags=:`gulp&webpack`
+- [前端構建工具之爭——Webpack vs Gulp 誰會被拍死在沙灘上](https://www.cnblogs.com/iovec/p/7921177.html)
