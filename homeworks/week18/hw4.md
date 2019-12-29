@@ -36,3 +36,4 @@ Base64編碼,並內嵌入 網頁之中
 - [使用 DATA URI 將圖片以 Base64 編碼並內崁至網頁中，加速載入速度
 2013/09/12](https://blog.gtwang.org/web-development/minimizing-http-request-using-data-uri/)
 - [前端構建工具之爭——Webpack vs Gulp 誰會被拍死在沙灘上](https://www.cnblogs.com/iovec/p/7921177.html)
+- [Webpack教學 (一) ：什麼是Webpack? 能吃嗎？](https://medium.com/@hulitw/introduction-mvc-spa-and-ssr-545c941669e9)
