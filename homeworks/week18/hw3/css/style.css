@@ -1,0 +1,13 @@
+  .container{
+  	margin-top:20px;
+  }
+
+.delete-btn {
+  border-radius: 6px;
+  background-color: #ff7f76;
+  color: black;
+  font-size: 12px;
+}
+.checked {
+text-decoration:line-through;
+}
