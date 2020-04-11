@@ -4,6 +4,12 @@ import Nav from './nav';
 import About from './about'; 
 import Home from './home'; 
 import Post from './post'; 
+import {
+  BrowserRouter as Router,
+  Switch,
+  Route,
+  Link
+} from "react-router-dom";
 
 // 顯示出# 後面的字元
 const _changeHashTag =  (str) => {
