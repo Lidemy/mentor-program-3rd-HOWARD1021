@@ -18,9 +18,20 @@ VirtualDom 此功能會去對 舊資料與新資料的排版與資料進行比�
 - state 是讓組件自己控制自己的狀態
 - props 是讓外部對組件自己進行配置
 ## 請列出 React 的 lifecycle 以及其代表的意義
-
 - constructor
-   當組件被初始化時被調用，可以設置初始化狀態與綁定 物件 
-- render 
-- componentDidMount
+  - 當組件被初始化時被調用，可以設置初始化狀態與綁定 物件 
+   如果沒有設置 state  或 綁定 方法的話 就不需要 construtor 
+  - 一個  React component  會在其被 Mount(加入 DOM tree 中) 前呼叫 constructor 
+  - 如果是在 React Component subClass 產生一個 constructor  就必須在其他宣告前，新增一個 super(props) 否則  constructor 裡面的 this.props 會出現 undefiend 這個 bug 
+  - 主要目的
+   1. 指定 this.state  來宣告 組件內的 state 值 
+   2. 為事件處理(event handler) 綁定 instance 
+  - constructor 為唯一一個設定 this.state 的地方，也不能在此 使用 this.setState 
 - componentWillMount
+    會在 render() 前呼叫，可以在其中設置 組件內部的變化，因為不會再從新渲染一次，但還是建議在 constructor 裡面做初始化的動作
+- render 
+    為 component 裡面必要的 lifeCycle 
+    會去判斷 this.state this.props  的變化，並回傳組件輸出的元素，要記住 render 為一個純函數 不應該在裡面 改變 component 的 state 並且不會與瀏覽器有互動
+- componentDidMount
+  - 在 Component 被 Mount(加入 DOM tree 中)後 馬上被呼叫，DOM node 的初始化應該寫在這個方法裡面，如果需要向遠方終端點(Remote endpoint)，進行實例網路請求的話(network request)，要請求資料適合使用的生命週期
+是個 請求 API 的好地點。 
