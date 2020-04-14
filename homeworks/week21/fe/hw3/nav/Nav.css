@@ -1,0 +1,35 @@
+.nav {
+    position:fixed;
+    top:0;
+    left:0;
+    right:0;
+    background:grey;
+}
+
+.nav__list{
+    padding:0;
+    list-style:none;
+    text-align:left;
+    margin:10px;
+}
+
+.nav__list li {
+    display:inline-block;
+    margin-right:10px;
+    background:rgb(255,0,0,0.5);
+    transition:background 0,3s;   
+    padding:10px;
+    cursor:pointer;
+}
+
+.nav__list li:hover {
+background:rgb(255,0,0,0.6);
+}
+
+.nav__list .active{
+background:rgb(255,0,0,0.8);
+}
+.nav__list a{
+    text-decoration:none;
+    color:black;
+}

@@ -1,0 +1,89 @@
+.main_board{
+  margin-left:100px;
+  font: 20px "Century Gothic", Futura, cursive; 
+}
+
+
+.game__field{
+  margin-left:100px;
+  position:relative;
+}
+
+/*展現棋盤*/  
+
+.game__board__bg {
+  height:360px;
+  width:360px;
+  display:flex;
+  flex-wrap:wrap;
+  position:absolute;
+  top:10px;
+  left:10px;
+  z-index: -100;
+  box-sizing:border-box;
+  background:#A35E47;
+
+}
+.block {
+  height:20px;
+  width:20px;
+  box-sizing:border-box;
+  border:0.1px solid black ;
+}
+
+
+/*展現棋子*/  
+.game__board {
+    color:red;
+    height: 380px;
+    width: 380px;
+    border:0.1px solid black;
+    box-sizing: content-box;
+    display: flex;
+    flex-wrap: wrap;
+
+}
+
+.square {
+    height: 20px;
+    width: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+    
+.black {
+    height: 15px;
+    width: 15px;
+    border-radius: 50%;
+    background: black;
+}
+
+.white {
+    height: 15px;
+    width: 15px;
+    box-sizing: border-box;
+    border:0.5px solid black;
+    border-radius: 50%;
+    background: white;
+}
+.game__info{
+  padding:10px;
+  margin-left:100px;    
+    display: flex;
+    flex-wrap: wrap;      
+    color:#A35E47;
+
+}
+
+
+.btn{
+  margin:10px;
+}
+
+
+
+
+
+
